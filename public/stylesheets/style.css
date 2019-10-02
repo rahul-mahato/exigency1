@@ -1,0 +1,73 @@
+body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #222326 !important;
+  color: rgb(222,213,28) !important;
+}
+
+.navbar{
+  background-color:#222326 !important;
+  height: 15vh;
+}
+#footer{
+  background-color: #28292b;
+  height: 50px;
+  color:aliceblue;
+}
+.exigency-link{
+  color: red;
+}
+#hero-area{
+  height: 90vh;
+  background: url(/images/hero-area-banner.jpg) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#hero-area .primary-overlay{
+  background: rgba(255, 50, 50, 0.7);
+  position: absolute;
+  top: 0;
+  left:0;
+  width:100%;
+  height: 100%;
+}
+#hero-banner{
+  padding-top:20%;
+  padding-bottom: 20%;
+  color: aliceblue
+}
+
+#meet-team{
+  background: #222326;
+  color:rgb(222,213,28);
+}
+
+#meet-team .card{
+  background: rgb(224, 202, 0);
+  color: #ffffff;
+  border-bottom:3px #222326 solid;
+}
+#meet-team .card:hover{
+  background: rgb(197, 178, 3);
+}
+
+#meet-team img{
+  margin-top:-50px;
+}
+
+#meet-team .fab{
+  color: #222326;
+}
+
+#team-header{
+  border-bottom: 1px rgb(168, 158, 66) solid;
+}
+
+#crash-flash{
+  height:40%;
+}
+
+#features{
+  background: rgb(222,213,28);
+  color: #222326;
+}

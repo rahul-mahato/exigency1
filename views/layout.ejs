@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<head>
+    <title>
+        Exigence Network
+    </title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://use.fontawesome.com/releases/v5.0.4/css/all.css" rel="stylesheet">
+    
+
+
+
+</head>
+<style>
+  body {
+  padding: 0px;
+  font: 14px "Lucida Grande", Helvetica, Arial, sans-serif;
+  background: #222326 !important;
+  color: rgb(222,213,28) !important;
+  overflow-x: hidden;
+}
+
+.navbar{
+  background-color:#222326 !important;
+  height: 15vh;
+}
+#footer{
+  background-color: #28292b;
+  height: 50px;
+  color:aliceblue;
+}
+.exigency-link{
+  color: red;
+}
+#hero-area{
+  height: 90vh;
+  background: url(/images/hero-area-banner.jpg) no-repeat;
+  background-size: cover;
+  position: relative;
+}
+#hero-area .primary-overlay{
+  background: rgba(255,213,28, 0.6);
+  position: absolute;
+  top: 0;
+  left:0;
+  width:100%;
+  height: 100%;
+}
+#hero-banner{
+  padding-top:20%;
+  padding-bottom: 20%;
+  color: aliceblue
+}
+
+#meet-team{
+  background: #222326;
+  color:rgb(222,213,28);
+}
+
+#meet-team .card{
+  background: rgb(224, 202, 0);
+  color: #ffffff;
+  border-bottom:3px #222326 solid;
+}
+#meet-team .card:hover{
+  background: rgb(197, 178, 3);
+}
+
+#meet-team img{
+  margin-top:-50px;
+}
+
+#meet-team .fab{
+  color: #222326;
+}
+
+#team-header{
+  border-bottom: 1px rgb(168, 158, 66) solid;
+}
+
+#crash-flash{
+  height:40%;
+}
+
+#features{
+  background: rgb(222,213,28);
+  color: #222326;
+}
+</style>
+<body>
+    <%- body %> 
+    <section id="footer" class="pt-3">
+        <% include ./partials/footer %>   
+    </section>
+
+</body>

@@ -1,0 +1,358 @@
+<section id="Navbar">
+        <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
+           <div class ="container">
+               <a href="index.html" class="navbar-brand">Exigency Network</a>
+               <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                   <span class="navbar-toggler-icon">
+                   </span>
+               </button>
+   
+                   <div class="collapse navbar-collapse" id="navbarCollapse">
+                       <ul class="navbar-nav ml-auto">
+                           <li class="nav-item">
+                               <a href="/" class="nav-link">Home</a>
+                           </li>
+                           <li class="navbar-item">
+                               <a href="/about-us-loggedout" class="nav-link">Explore Us</a>
+                           </li>
+                               <a href="/users/login" class="nav-link">Log In</a>
+                           </li>
+                           <li class="navbar-item">
+                                   <a href="/users/Register" class="nav-link">Register</a>
+                               </li>
+                       </ul>
+                   </div>
+           </div>
+   </nav>
+   </section>
+   <section id="hero-area" class="py-3">
+       <div class="primary-overlay text-white">
+           <div class="container">
+                   <div id="hero-banner" class="row w-100 align-item-center">
+                       <div class="col">
+                               <div class="text-center align-self-center align-center">
+                                       <img src="/images/hero-area-banner-icon.png" alt="" class="img-fluid">
+                               </div>
+                               <div class="text-center align-self-center align-center">
+                                       <h1>Welcome To Exigency Network</h1>
+                                       <p class="lead">A safe insurance to your comforting drives</p>
+                               </div>
+                       </div> 
+                   </div>
+           </div>
+       </div>
+</section>
+<section id="registration" class="py-3">
+        <div class="container text-center py-2">
+            <h3>Register Here</h3>
+            <p class="lead">Fill Out The Details</p>
+            <div class="row align-self-center justify-content-center w-100">
+                <div class="col-lg-2 "></div>
+                <div class="col-lg-8 align-self-center">
+                    <% include ./partials/messages %>
+                    <form action="/users/register" method="POST">
+                        <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <div class="container">
+                                    <div class="row w-100 m-0">
+                                        <div class="col-2 w-100">
+                                                <span class="input-group-addon"><i class="fa fa-user fa-2x pt-2"></i></span>
+                                        </div>
+                                        <div class="col-5 w-100 px-1">
+                                            <input name="Fname" type="Name" id="Fname" class="form-control rounded" placeholder="First Name" value="<%= typeof Fname != 'undefined' ? Fname: '' %>">
+                                        </div>
+                                        <div class="col-5 w-100 px-1">
+                                            <input name="Lname" type="Name" id="Lname" class="form-control rounded" placeholder="Last Name" value="<%= typeof Lname != 'undefined' ? Lname: '' %>">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <div class="container">
+                                    <div class="row w-100 m-0">
+                                        <div class="col-2 w-100 px-1"></div>
+                                        <div class="col-2 w-100">
+                                                <span class="input-group-addon"><i class="fas fa-lock fa-2x pt-2"></i></span>
+                                        </div>
+                                        <div class="col-6 w-100 px-1">
+                                            <input name="password" type="password" class="form-control rounded" placeholder="Password" value="<%= typeof password != 'undefined' ? password: '' %>">
+                                        </div>
+                                        <div class="col-2 w-100 px-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <div class="container">
+                                    <div class="row w-100 m-0">
+                                        <div class="col-2 w-100 px-1"></div>
+                                        <div class="col-2 w-100">
+                                                <span class="input-group-addon"><i class="fas fa-lock fa-2x pt-2"></i></span>
+                                        </div>
+                                        <div class="col-6 w-100 px-1">
+                                            <input name="password2" type="password" class="form-control rounded" placeholder="Confirm Password" value="<%= typeof password2 != 'undefined' ? password2: '' %>">
+                                        </div>
+                                        <div class="col-2 w-100 px-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <div class="container">
+                                    <div class="row w-100 m-0">
+                                        <div class="col-2 w-100 px-1"></div>
+                                        <div class="col-2 w-100">
+                                                <span class="input-group-addon"><i class="fas fa-envelope-open fa-2x pt-2"></i></span>
+                                        </div>
+                                        <div class="col-6 w-100 px-1">
+                                            <input name="email" type="text" class="form-control rounded" placeholder="Email" value="<%= typeof email != 'undefined' ? email: '' %>">
+                                        </div>
+                                        <div class="col-2 w-100 px-1"></div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                                <div class="input-group input-group-lg">
+                                    <div class="container">
+                                        <div class="row w-100 m-0">
+                                            <div class="col-2 w-100 px-1"></div>
+                                            <div class="col-2 w-100">
+                                                    <span class="input-group-addon"><i class="fas fa-tint fa-2x pt-2"></i></span>
+                                            </div>
+                                            <div class="col-6 w-100 px-1">
+                                                <input name="bloodgroup" type="text" class="form-control rounded" placeholder="Blood Group" value="<%= typeof bloodgroup != 'undefined' ? bloodgroup: '' %>">
+                                            </div>
+                                            <div class="col-2 w-100 px-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <div class="input-group input-group-lg">
+                                    <div class="container">
+                                        <div class="row w-100 m-0">
+                                            <div class="col-2 w-100"></div>
+                                            <div class="col-2 w-100">
+                                                    <span class="input-group-addon"><i class="far fa-calendar-alt fa-2x"></i></span>
+                                                    <p class="lead" style="font-size: 8px; margin-bottom: 0px;">DOB</p>
+                                            </div>
+                                            <div class="col-6 w-100 px-1">
+                                                <input name="DOB" type="date" class="form-control rounded" placeholder="Date Of Birth" value="<%= typeof DOB != 'undefined' ? DOB: '' %>">
+                                            </div>
+                                            <div class="col-2 w-100 px-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-lg">
+                                    <div class="container">
+                                        <div class="row w-100 m-0">
+                                            <div class="col-2 w-100 px-1"></div>
+                                            <div class="col-2 w-100">
+                                                    <span class="input-group-addon"><i class="fas fa-mobile-alt fa-2x pt-2"></i></span>
+                                            </div>
+                                            <div class="col-6 w-100 px-1">
+                                                <input name="phone" type="number" class="form-control rounded" placeholder="Phone Number" value="<%= typeof phoneno != 'undefined' ? phoneno: '' %>">
+                                            </div>
+                                            <div class="col-2 w-100 px-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <div class="input-group input-group-lg">
+                                    <div class="container">
+                                        <div class="row w-100 m-0">
+                                            <div class="col-2 w-100 px-1"></div>
+                                            <div class="col-2 w-100">
+                                                    <span class="input-group-addon"><i class="fas fa-car fa-2x pt-2"></i></span>
+                                            </div>
+                                            <div class="col-6 w-100 px-1">
+                                                <input name="vno" type="text" class="form-control rounded" placeholder="Vehicle Number" value="<%= typeof vno != 'undefined' ? vno: '' %>">
+                                            </div>
+                                            <div class="col-2 w-100 px-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-lg">
+                                    <div class="container">
+                                        <div class="row w-100 m-0">
+                                            <div class="col-2 w-100 px-1"></div>
+                                            <div class="col-2 w-100">
+                                                    <span class="input-group-addon"><i class="fas fa-address-card fa-2x pt-2"></i></span>
+                                            </div>
+                                            <div class="col-6 w-100 px-1">
+                                                <input name="aadhaar" type="Number" class="form-control rounded" placeholder="Aadhaar Number" value="<%= typeof aadhaar != 'undefined' ? aadhaar: '' %>">
+                                            </div>
+                                            <div class="col-2 w-100 px-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group">
+                                <div class="input-group input-group-lg">
+                                    <div class="container">
+                                        <div class="row w-100 m-0">
+                                            <div class="col-2 w-100 px-1"></div>
+                                            <div class="col-2 w-100">
+                                                    <span class="input-group-addon"><i class="fas fa-thumbtack fa-2x pt-2"></i></span>
+                                            </div>
+                                            <div class="col-6 w-100 px-1">
+                                                <input name="city" type="text" class="form-control rounded" placeholder="City" value="<%= typeof city != 'undefined' ? city: '' %>">
+                                            </div>
+                                            <div class="col-2 w-100 px-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+    
+                            <div class="form-group">
+                                <div class="input-group input-group-lg">
+                                    <div class="container">
+                                        <div class="row w-100 m-0">
+                                            <div class="col-2 w-100 px-1"></div>
+                                            <div class="col-2 w-100">
+                                                    <span class="input-group-addon"><i class="fas fa-location-arrow fa-2x pt-2"></i></span>
+                                            </div>
+                                            <div class="col-6 w-100 px-1">
+                                                <input name="add1" type="text" class="form-control rounded" placeholder="Address Line:1" value="<%= typeof add1 != 'undefined' ? add1: '' %>">
+                                            </div>
+                                            <div class="col-2 w-100 px-1"></div>
+                                    </div>
+                                    <div class="row w-100 m-0 pt-2">
+                                            <div class="col-2 w-100 px-1"></div>
+                                            <div class="col-2 w-100">
+                                            </div>
+                                            <div class="col-6 w-100 px-1">
+                                                <input name="add2" type="text" class="form-control rounded" placeholder="Address Line:2" value="<%= typeof add2 != 'undefined' ? add2: '' %>">
+                                            </div>
+                                            <div class="col-2 w-100 px-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="form-group pb-2">
+                                <div class="input-group input-group-lg">
+                                    <div class="container">
+                                        <div class="row w-100 m-0">
+                                            <div class="col-2 w-100 px-1"></div>
+                                            <div class="col-2 w-100">
+                                                    <span class="input-group-addon"><i class="fas fa-map-marker-alt fa-2x pt-2"></i></span>
+                                            </div>
+                                            <div class="col-6 w-100 px-1">
+                                                <input name="state" type="text" class="form-control rounded" placeholder="State" value="<%= typeof state != 'undefined' ? state: '' %>">
+                                            </div>
+                                            <div class="col-2 w-100 px-1"></div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="overlay" style="background-color: rgba(255,0,0,0.8); color:whitesmoke">
+                            <h3 class="mt-3">Emergengy Contacts</h3>
+                            <p class="lead">Fill Out The Details</p>
+                                <div class="form-group">
+                                    <div class="input-group input-group-lg">
+                                        <h4 class="pb-2">Contact 1</h4>
+                                        <div class="container">
+                                            <div class="row w-100 m-0">
+                                                <div class="col-2 w-100">
+                                                        <span class="input-group-addon"><i class="fa fa-user fa-2x pt-2"></i></span>
+                                                </div>
+                                                <div class="col-5 w-100 px-1">
+                                                    <input name="ecfn1" type="text" class="form-control rounded" placeholder="First Name" value="<%= typeof ecfn1 != 'undefined' ? ecfn1: '' %>">
+                                                </div>
+                                                <div class="col-5 w-100 px-1">
+                                                    <input name="ecln1" type="text" class="form-control rounded" placeholder="Last Name" value="<%= typeof ecln1 != 'undefined' ? ecln1: '' %>">
+                                                </div>
+                                            </div>
+                                            <div class="row w-100 m-0">
+                                                <div class="col-2 w-100">
+                                                        
+                                                </div>
+                                                <div class="col-5 w-100 px-1">
+                                                    <span class="input-group-addon"><i class="fas fa-mobile-alt fa-2x pt-2"></i></span>
+                                                </div>
+                                                <div class="col-5 w-100 px-1">
+                                                    <input name="ecpn1" type="number" class="form-control rounded" placeholder="Phone Number" value="<%= typeof ecpn1 != 'undefined' ? ecpn1: '' %>">>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group input-group-lg">
+                                        <h4 class="pb-2">Contact 2</h4>
+                                        <div class="container">
+                                            <div class="row w-100 m-0">
+                                                <div class="col-2 w-100">
+                                                        <span class="input-group-addon"><i class="fa fa-user fa-2x pt-2"></i></span>
+                                                </div>
+                                                <div class="col-5 w-100 px-1">
+                                                    <input name="ecfn2" type="text" class="form-control rounded" placeholder="First Name" value="<%= typeof ecfn2 != 'undefined' ? ecfn2: '' %>">>
+                                                </div>
+                                                <div class="col-5 w-100 px-1">
+                                                    <input name="ecln2" type="text" class="form-control rounded" placeholder="Last Name" value="<%= typeof ecln2 != 'undefined' ? ecln2: '' %>">>
+                                                </div>
+                                            </div>
+                                            <div class="row w-100 m-0">
+                                                <div class="col-2 w-100">
+                                                        
+                                                </div>
+                                                <div class="col-5 w-100 px-1">
+                                                        <span class="input-group-addon"><i class="fas fa-mobile-alt fa-2x pt-2"></i></span>
+                                                </div>
+                                                <div class="col-5 w-100 px-1">
+                                                    <input name="ecpn2" type="number" class="form-control rounded" placeholder="Phone Number" value="<%= typeof ecpn2 != 'undefined' ? ecpn2: '' %>">>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <div class="input-group input-group-lg">
+                                        <h4 class="pb-2">Contact 3</h4>
+                                        <div class="container">
+                                            <div class="row w-100 m-0">
+                                                <div class="col-2 w-100">
+                                                        <span class="input-group-addon"><i class="fa fa-user fa-2x pt-2"></i></span>
+                                                </div>
+                                                <div class="col-5 w-100 px-1">
+                                                    <input name="ecfn3" type="text" class="form-control rounded" placeholder="First Name" value="<%= typeof ecfn3 != 'undefined' ? ecfn3: '' %>">>
+                                                </div>
+                                                <div class="col-5 w-100 px-1">
+                                                    <input name="ecln3" type="text" class="form-control rounded" placeholder="Last Name" value="<%= typeof ecln3 != 'undefined' ? ecln3: '' %>">>
+                                                </div>
+                                            </div>
+                                            <div class="row w-100 m-0">
+                                                <div class="col-2 w-100">
+                                                        
+                                                </div>
+                                                <div class="col-5 w-100 px-1">
+                                                        <span class="input-group-addon"><i class="fas fa-mobile-alt fa-2x pt-2"></i></span>
+                                                </div>
+                                                <div class="col-5 w-100 px-1">
+                                                    <input name="ecpn3" type="number" class="form-control rounded" placeholder="Phone Number" value="<%= typeof ecpn3 != 'undefined' ? ecpn3: '' %>">> 
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        <input type="submit" class="btn btn-block btn-rounded bg-warning">
+                    </form>
+                </div>
+                <div class="col-lg-2"></div>
+                </div>
+            </div>
+        </div>
+</section>

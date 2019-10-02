@@ -1,0 +1,137 @@
+
+    <section id="Navbar">
+         <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
+            <div class ="container">
+                <a href="index.html" class="navbar-brand">Exigency Network</a>
+                <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+                    <span class="navbar-toggler-icon">
+                    </span>
+                </button>
+    
+                    <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav ml-auto">
+                            <li class="nav-item">
+                                <a href="/dashboard" class="nav-link">Profile</a>
+                            </li>
+                            <li class="navbar-item <%= typeof title == 'analysis' ? active: '' %>">
+                                <a href="/analysis" class="nav-link">Analysis</a>
+                            </li>
+                            <li class="navbar-item">
+                                <a href="/users/logout" class="nav-link">Log Out</a>
+                            </li>
+                            <li class="navbar-item">
+                                    <a href="/dashboard" class="nav-link">Hi <%= Fname %>!</a>
+                                </li>
+                        </ul>
+                    </div>
+            </div>
+    </nav>
+    </section>
+    <section id="hero-area" class="py-3">
+        <div class="primary-overlay text-white">
+            <div class="container">
+                    <div id="hero-banner" class="row w-100 align-item-center">
+                        <div class="col">
+                                <div class="text-center align-self-center align-center">
+                                        <img src="/images/hero-area-banner-icon.png" alt="" class="img-fluid">
+                                </div>
+                                <div class="text-center align-self-center align-center">
+                                        <h1>Welcome <%= Fname %> <%= Lname %></h1>
+                                        <p class="lead">A safe insurance to your comforting drives</p>
+                                </div>
+                        </div> 
+                    </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="User-dashboard">
+        <div class="cointainer p-5 m-5">
+            <div class="row justify-items-center text-center align-item-center">
+                <div class="col-3 align-self-center">
+                    <img src="/images/propic.png" alt="" class="rounded-circle img-fluid">
+                </div>
+                <div class="col-9 align-self-center">
+                    <table class="table table-borderless table-hover table-light">
+                        <thead class="thead-dark">
+                            <tr>
+                                <th colspan=2> Your Profile</td>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Name::</td>
+                                <td><%= Fname %> <%= Lname %></td>
+                            </tr>
+                            <tr>
+                                <td>Email::</td>
+                                <td><%= email %></td>
+                            </tr>
+                            <tr>
+                                <td>Blood Group::</td>
+                                <td><%= bloodgroup %></td>
+                            </tr>
+                            <tr>
+                                <td>Date of Birth::</td>
+                                <td><%= DOB %></td>
+                            </tr>
+                            <tr>
+                                <td>Phone Number::</td>
+                                <td><%= phoneno %></td>
+                            </tr>
+                            <tr>
+                                <td>Vehicle Number::</td>
+                                <td><%= vno %></td>
+                            </tr>
+                            <tr>
+                                <td>Aadhar::</td>
+                                <td><%= aadhaar %></td>
+                            </tr>
+                            <tr>
+                                <td>City::</td>
+                                <td><%= city %></td>
+                            </tr>
+                            <tr>
+                                <td>Address Line1::</td>
+                                <td><%= add1 %></td>
+                            </tr>
+                            <tr>
+                                <td>Address Line2::</td>
+                                <td><%= add2 %></td>
+                            </tr>
+                            <tr>
+                                <td>State::</td>
+                                <td><%= state %></td>
+                            </tr>
+                            <tr>
+                                <td>Emergency Contact 1 Name::</td>
+                                <td><%= ecfn1 %> <%= ecln1 %></td>
+                            </tr>
+                            <tr>
+                                <td>Emergency Contact 1 Phone::</td>
+                                <td><%= ecpn1 %></td>
+                            </tr>
+                            <tr>
+                                <td>Emergency Contact 2 Name::</td>
+                                <td><%= ecfn2 %> <%= ecln2 %></td>
+                            </tr>
+                            <tr>
+                                <td>Emergency Contact 2 Phone::</td>
+                                <td><%= ecpn2 %></td>
+                            </tr>
+                            <tr>
+                                <td>Emergency Contact 3 Name::</td>
+                                <td><%= ecfn3 %> <%= ecln3 %></td>
+                            </tr>
+                            <tr>
+                                <td>Emergency Contact 3 Phone::</td>
+                                <td><%= ecpn3 %></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+</body>
