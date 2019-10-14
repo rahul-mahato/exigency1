@@ -81,11 +81,12 @@ router.post('/iotAuth', async(req, res) => {
     console.log(req.body);
 
     res.writeHeader(200, { "Content-Type": "text/html" });
+
     UserData = await findUserData();
 
 
     if (UserData.length != 1) {
-        res.end("INVALID mac NO");
+        res.end(`sent mac address ${req.body.mac}  is Not registered`);
         return;
     } else {
         console.log(UserData);
