@@ -8,8 +8,7 @@ module.exports = function sendText(hospital, details) {
     mobile1 = "9078292231";
     mobile2 = "7438805030";
     mobile3 = "7749803313";
-    messages = `hey hospital ${hospital.hname} user ${details.name} , Vehicle Number : ${details.vehicle} have been into an accident in latitude ${details.lat} and longitude ${details.long} 
-    MAP - https://www.google.com/maps/search/?api=1&query=${details.lat},${details.long}`;
+    messages = `ALERT. ${hospital.hname} . Our user ${details.name} , Vehicle Number : ${details.vehicle} have been into an accident in https://www.google.com/maps/search/?api=1&query=${details.lat},${details.long}`;
 
 
 
