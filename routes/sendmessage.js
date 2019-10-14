@@ -11,8 +11,9 @@ module.exports = function sendText(hospital, details) {
     messages = `hey hospital ${hospital.hname} user ${details.name} , Vehicle Number : ${details.vehicle} have been into an accident in latitude ${details.lat} and longitude ${details.long} 
     MAP - https://www.google.com/maps/search/?api=1&query=${details.lat},${details.long}`;
 
-    console.log(messages);
 
+
+    return messages;
     var options = {
         "method": "POST",
         "hostname": "api.msg91.com",

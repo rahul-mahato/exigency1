@@ -9,15 +9,9 @@ module.exports.checkAuthNo = async function checkAuthNo(authNo) {
         UserModel.find({ authNo: authNo }, (err, docs) => {
             if (err) {
                 console.log(err);
-            }
-            if (docs.length < 1) {
-                console.log("incorrect authNo");
-
-                ////////////////////send that the authentication number is incorrect
-
             } else {
                 ///////
-                resolve(docs[0])
+                resolve(docs)
             }
         })
     })
@@ -65,4 +59,26 @@ module.exports.findPlaceDetails = async function findPlaceDetails(place_id) {
     });
 
 
+}
+
+
+module.exports.findplaceIdPolice = async function findplaceId(latitude, longitude) {
+    return new promise((resolve, reject) => {
+        https.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&rankby=distance&keyword=nearby%20police%20station&key=AIzaSyCZB0Xb0NHCfdEi8DpZGImUTHT80c9UpBk`,
+            resp => {
+                rawData = '';
+                resp.on('data', (chunk) => {
+                    rawData += chunk;
+                });
+                resp.on('end', () => {
+                    try {
+                        const parsedData = JSON.parse(rawData);
+                        console.log(parsedData[0]);
+                        resolve(1);
+                    } catch (e) {
+                        console.error(e.message);
+                    }
+                });
+            });
+    });
 }
