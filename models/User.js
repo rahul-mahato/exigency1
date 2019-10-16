@@ -91,6 +91,10 @@ const UserSchema = new mongoose.Schema({
     authNo: {
         type: Number,
         required: true
+    },
+    IOTmac: {
+        type: Number,
+
     }
 });
 
