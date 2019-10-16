@@ -117,7 +117,8 @@ async function findAllDetails(UserData) {
     const errors = [];
 
 
-    var phone_number, name, place_id;
+    var Hosphone_number, Polphone_number, place_id1, place_id2, Hosname;
+    var PoliceName;
 
 
     var location = new LocationModel({
@@ -128,9 +129,10 @@ async function findAllDetails(UserData) {
 
     location.save((err, docs) => {
         if (err) {
-            errors.push(JSON.stringify(err, undefined, 0));
+            console.log(JSON.stringify(err, undefined, 0));
             return;
         } else {
+
             messages.push("DATA POSTED SUCCESSFULLY : " + UserData.lat + " , " + UserData.long + " <br> ");
         }
     })
@@ -140,27 +142,40 @@ async function findAllDetails(UserData) {
 
     var i = 0;
     //searching for hospitals nearby
-    var data = await asyncFunctions.findplaceId(UserData.lat, UserData.long);
-    while (!phone_number) {
+    var Hosdata = await asyncFunctions.findplaceId(UserData.lat, UserData.long);
+    var PolData = await asyncFunctions.findplaceIdPolice(UserData.lat, UserData.long);
+    while (!Hosphone_number) {
 
         ///finding nearby places
 
-        place_id = data.results[i].place_id;
-        console.log("place_id = " + place_id + "<br>");
+        place_id1 = Hosdata.results[i].place_id;
+
+        console.log("Hos place_id = " + place_id1);
+
+        var Hosdet = await asyncFunctions.findPlaceDetails(place_id1);
+        Hosname = Hosdet.result.name;
+        Hosphone_number = Hosdet.result.formatted_phone_number;
+        i += 1;
 
 
+    }
 
-        var det = await asyncFunctions.findPlaceDetails(place_id);
-        console.log(det);
-
-        name = det.result.name;
-        phone_number = det.result.formatted_phone_number;
+    i = 0;
+    while (!Polphone_number) {
+        place_id2 = PolData.results[i].place_id;
+        console.log("Pol place_id = " + place_id2);
+        var polDet = await asyncFunctions.findPlaceDetails(place_id2);
+        console.log(polDet.result);
+        PoliceName = polDet.result.name;
+        console.log("POLICE NAME :" + polDet.result.name + " : " + PoliceName);
+        Polphone_number = polDet.result.formatted_phone_number;
         i += 1;
 
     }
+
     var hospital = new hospitalModel({
-        hname: name,
-        phoneNumber: phone_number
+        hname: Hosname,
+        phoneNumber: Hosphone_number
 
     });
 
@@ -182,8 +197,11 @@ async function findAllDetails(UserData) {
 
 
 
-    messages.push("Hospital Name = " + name + "<br>");
-    messages.push("Phone = " + phone_number + "<br>");
+    messages.push("Hospital Name = " + Hosname + "<br>");
+    messages.push("Hospital Phone = " + Hosphone_number + "<br><br>");
+    messages.push("Police Station Name = " + PoliceName + "<br>");
+    messages.push("Police station Phone = " + Polphone_number + "<br>");
+
     messages.push("<br>MESSAGE SENT SUCCESSFULLY");
 
     return messages;

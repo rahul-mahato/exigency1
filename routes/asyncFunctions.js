@@ -19,7 +19,8 @@ module.exports.checkAuthNo = async function checkAuthNo(authNo) {
 
 module.exports.findplaceId = async function findplaceId(latitude, longitude) {
     return new promise((resolve, reject) => {
-        https.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&rankby=distance&keyword=hospital&key=AIzaSyCZB0Xb0NHCfdEi8DpZGImUTHT80c9UpBk`,
+        // https.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&rankby=distance&keyword=hospital&key=AIzaSyCZB0Xb0NHCfdEi8DpZGImUTHT80c9UpBk&opennow`,
+        https.get(`https://maps.googleapis.com/maps/api/place/textsearch/json?query=hospitals+near+me&location=${latitude},${longitude}&rankby=distance&key=AIzaSyCZB0Xb0NHCfdEi8DpZGImUTHT80c9UpBk`,
             resp => {
                 rawData = '';
                 resp.on('data', (chunk) => {
@@ -28,6 +29,7 @@ module.exports.findplaceId = async function findplaceId(latitude, longitude) {
                 resp.on('end', () => {
                     try {
                         const parsedData = JSON.parse(rawData);
+
                         resolve(parsedData);
                     } catch (e) {
                         console.error(e.message);
@@ -64,7 +66,7 @@ module.exports.findPlaceDetails = async function findPlaceDetails(place_id) {
 
 module.exports.findplaceIdPolice = async function findplaceId(latitude, longitude) {
     return new promise((resolve, reject) => {
-        https.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&rankby=distance&keyword=nearby%20police%20station&key=AIzaSyCZB0Xb0NHCfdEi8DpZGImUTHT80c9UpBk`,
+        https.get(`https://maps.googleapis.com/maps/api/place/nearbysearch/json?location=${latitude},${longitude}&rankby=distance&type=police&key=AIzaSyCZB0Xb0NHCfdEi8DpZGImUTHT80c9UpBk`,
             resp => {
                 rawData = '';
                 resp.on('data', (chunk) => {
@@ -73,12 +75,13 @@ module.exports.findplaceIdPolice = async function findplaceId(latitude, longitud
                 resp.on('end', () => {
                     try {
                         const parsedData = JSON.parse(rawData);
-                        console.log(parsedData[0]);
-                        resolve(1);
+                        // console.log(parsedData);
+                        resolve(parsedData);
                     } catch (e) {
                         console.error(e.message);
                     }
                 });
             });
     });
+
 }
