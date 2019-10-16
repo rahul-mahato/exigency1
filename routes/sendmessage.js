@@ -44,5 +44,5 @@ module.exports = function sendText(hospital, details) {
         sms: [{ message: messages, to: [`${mobile1}`, `${mobile2}`, `${mobile3}`] }]
     }));
     req.end();
-
+    return messages;
 }
