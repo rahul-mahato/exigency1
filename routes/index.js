@@ -98,7 +98,6 @@ router.get('/dashboard', (req, res) => {
         ecpn3: req.user.ecpn3,
         authNo: req.user.authNo
     });
-    console.log(req.user.authNo);
 });
 
 module.exports = router;

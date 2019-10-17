@@ -1,6 +1,6 @@
-<section id="quickLaunch" class="" style="height: auto" onmousemove="getLocation()">
+<section id="quickLaunch" class="" style="height: auto;" onmousemove="getLocation()" >
     <div class="container py-3">
-        <div class="row text-center justify-content-center">
+        <div class="row text-center justify-content-center" style="display: none;" id="quickLaunch-banner">
             <div class="col align-self-center">
                 <div class="space py-3"></div>
                 <div class="space py-5">
@@ -10,7 +10,7 @@
                 <div id="quickbutton" class="quickbutton">
                     <button class="btn btn-danger p-3 w-50" onclick="showHelp();"><i class="fas fa-hand-holding-heart"></i>Get Help!</button>
                 </div>
-                <div class="input-quick-help d-none">
+                <div id="input-quick-help" style="display: none;">
                     <form action="/location/webAuth" method="post">
                         <div class="form-group">
                             <div class="input-group input-group-lg">
@@ -100,7 +100,7 @@
 <section id="hero-area" class="py-3 d-none">
     <div class="primary-overlay text-white">
         <div class="container">
-            <div id="hero-banner" class="row align-item-center">
+            <div id="hero-banner" class="row align-item-center" style="display: none;">
                 <div class="col">
                     <div class="text-center align-self-center align-center">
                         <img src="/images/hero-area-banner-icon.png" alt="" class="hero-png pb-2 img-fluid">

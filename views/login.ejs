@@ -27,7 +27,7 @@
 <section id="hero-area" class="py-3">
     <div class="primary-overlay text-white">
         <div class="container">
-            <div id="hero-banner" class="row  align-item-center">
+            <div id="hero-banner" class="row  align-item-center" style="display: none;">
                 <div class="col">
                     <div class="text-center align-self-center align-center">
                         <img src="/images/hero-area-banner-icon.png" alt="" class="hero-png pb-2 img-fluid">
@@ -42,11 +42,11 @@
         </div>
     </div>
 </section>
-<section id="registration" class="py-3 my-5">
+<section id="login" class="py-3 my-5">
     <div class="container text-center py-2">
         <h3>Login Here</h3>
         <p class="lead">Fill Out The Details</p>
-        <div class="row align-self-center justify-content-center w-100">
+        <div class="row align-self-center justify-content-center w-100" id="login-content" style="display:none">
             <div class="col-lg-3 "></div>
             <div class="col-lg-6 align-self-center">
                 <% include ./partials/messages %>

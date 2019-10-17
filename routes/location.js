@@ -41,7 +41,7 @@ router.post('/webAuth', async(req, res, next) => {
     }
     var UserData = await asyncFunctions.checkAuthNo(req.body.authNo);
     if (UserData.length != 1) {
-        res.end('INVALID auth No');
+        res.render('invalid-auth');
         return;
     } else {
         console.log(UserData);

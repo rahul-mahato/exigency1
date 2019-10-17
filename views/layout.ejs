@@ -13,7 +13,7 @@
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
 
 
 
@@ -96,6 +96,18 @@
             height: 35% !important;
         }
     }
+
+    #propic{
+        height: 60%;
+        width:60%;
+    }
+
+    @media only screen and (max-width: 768px) {
+        #propic{
+        height: 20%;
+        width:20%;
+    }
+    }
     
     #meet-team {
         background: #222326;
@@ -145,10 +157,17 @@
             <% include ./partials/footer %>
         </section>
         <script type="text/javascript">
-            function showHelp() {
+            /*function showHelp() {
                 document.querySelector('.quickbutton').classList.add('d-none');
                 document.querySelector('.input-quick-help').classList.remove('d-none');
-            }
+            }*/
+            $(document).ready(function(){
+                
+                $('#quickbutton').click(function(){
+                    $('#quickbutton').hide();
+                    $('#input-quick-help').show(2000);
+                })
+            });
 
             function revealQuickLaunch() {
                 document.querySelector('#quickLaunch').classList.add('d-none');
@@ -213,4 +232,24 @@
                 y.value = position.coords.longitude;
             }
         </script>
+        <script>
+            $('#hero-area').ready(function(){
+              $('#hero-banner').fadeIn(1000);
+              
+            });
+
+            $('#quickLaunch').ready(function(){
+              $('#quickLaunch-banner').fadeIn(1000);
+              
+            });
+
+            $('#login').scrollTop(function(){
+                $('#login-content').fadeIn(5000);
+            });
+
+            $('#registration').scrollTop(function(){
+                $('#registration-content').fadeIn(5000);
+            });
+            
+          </script>
 </body>
