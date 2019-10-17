@@ -1,4 +1,5 @@
 const express = require('express');
+
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -6,10 +7,21 @@ const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
 
-const app = express();
+var app = express();
+//Secure https
+
 
 //passport config
 require('./config/passport')(passport);
+app.enable('trust proxy');
+app.get("*", function(request, response) {
+    console.log(request.protocol + " " + request.headers.host + " " + request.url);
+    if (request.protocol === 'http') {
+        console.log("https://" + request.headers.host + request.url);
+        response.redirect("https://" + request.headers.host + request.url);
+    }
+});
+
 //database
 const db = require('./config/keys').MongoURI;
 //connect to mongo
