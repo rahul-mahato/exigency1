@@ -31,7 +31,7 @@ router.get('/hospitals', (req, res) => {
 
 router.post('/webAuth', async(req, res, next) => {
     console.log(req.body);
-    res.writeHeader(200, { "Content-Type": "text/html" });
+    // res.writeHeader(200, { "Content-Type": "text/html" });
     var UserData = await asyncFunctions.checkAuthNo(req.body.authNo);
     if (UserData.length != 1) {
         res.end("INVALID AUTH NO");
@@ -48,12 +48,11 @@ router.post('/webAuth', async(req, res, next) => {
             ph2: UserData[0].ecpn2,
             ph3: UserData[0].ecpn3,
         }
-        messages = await findAllDetails(detailsForText);
-        for (var i = 0; i < messages.length; i++) {
-            res.write(messages[i]);
-        }
+        nearbyDetails = await findAllDetails(detailsForText);
+        console.log(nearbyDetails);
+        res.render('gethelp', nearbyDetails);
+        res.end('');
     }
-    res.end('');
 
 })
 
@@ -190,6 +189,15 @@ async function findAllDetails(UserData) {
 
     })
 
+    nearbyDetails = {
+        HosName: Hosname,
+        HosPhone_number: Hosphone_number,
+        PoliceName: PoliceName,
+        PolPhone_number: Polphone_number,
+        SOS1: UserData.ph1,
+        SOS2: UserData.ph2,
+        SOS3: UserData.ph3
+    }
 
 
 
@@ -203,8 +211,9 @@ async function findAllDetails(UserData) {
     messages.push("Police station Phone = " + Polphone_number + "<br>");
 
     messages.push("<br>MESSAGE SENT SUCCESSFULLY");
+    console.log(messages);
 
-    return messages;
+    return nearbyDetails;
 
 
 
