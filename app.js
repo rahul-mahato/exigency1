@@ -1,5 +1,5 @@
 const express = require('express');
-var secure = require('express-force-https');
+
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -8,13 +8,17 @@ const session = require('express-session');
 const passport = require('passport');
 
 var app = express();
-app.use(secure);
+//Secure https
+
 
 //passport config
 require('./config/passport')(passport);
 
-//Secure https
-
+app.use(function(request, response) {
+    if (!request.secure) {
+        response.redirect("https://" + request.headers.host + request.url);
+    }
+});
 
 //database
 const db = require('./config/keys').MongoURI;
