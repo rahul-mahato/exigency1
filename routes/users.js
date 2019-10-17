@@ -207,7 +207,7 @@ router.post('/register', async(req, res) => {
                                 ecpn3
                             });
                         } else {
-                            const newUser = new User({
+                            var newUser = new User({
                                 usertype,
                                 Fname,
                                 Lname,
