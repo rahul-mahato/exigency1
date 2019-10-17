@@ -30,8 +30,15 @@ router.get('/hospitals', (req, res) => {
 })
 
 router.post('/webAuth', async(req, res, next) => {
+
     console.log(req.body);
-    // res.writeHeader(200, { "Content-Type": "text/html" });
+    if (!req.body.lat || !req.body.long) {
+
+        res.writeHeader(200, { "Content-Type": "text/html" });
+        res.write(JSON.stringify(req.body));
+        res.end("GPS LOCATION ERROR");
+        return;
+    }
     var UserData = await asyncFunctions.checkAuthNo(req.body.authNo);
     if (UserData.length != 1) {
         res.end('INVALID auth No');
@@ -62,11 +69,19 @@ router.post('/webAuth', async(req, res, next) => {
 
 
 router.post('/iotAuth', async(req, res) => {
+    if (!req.body.lat || !req.body.long) {
+
+        res.writeHeader(200, { "Content-Type": "text/html" });
+        res.write(JSON.stringify(req.body));
+        res.end("GPS LOCATION ERROR");
+        return;
+    }
+
     function findUserData() {
         return new promise(
             (resolve) => {
 
-                UserModel.find({ IOTmac: req.body.mac }, (err, doc) => {
+                UserModel.find({ macno: req.body.mac }, (err, doc) => {
                     if (!err) {
                         resolve(doc);
                     } else {
