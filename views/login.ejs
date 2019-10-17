@@ -1,88 +1,88 @@
 <section id="Navbar" class="py-3 ">
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
-            <a href="index.html" class="navbar-brand ml-4">Exigency Network</a>
-            <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+        <a href="index.html" class="navbar-brand ml-4">Exigency Network</a>
+        <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon">
                     </span>
             </button>
 
-            <div class="collapse navbar-collapse" id="navbarCollapse">
-                    <ul class="navbar-nav ml-auto">
-                            <li class="nav-item">
-                                    <a href="/" class="nav-link">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                    <a href="/about-us-loggedout" class="nav-link">Explore Us</a>
-                            </li>
-                            <li class="nav-item">
-                                    <a href="/users/login" class="nav-link">Log In</a>
-                            </li>
-                            <li class="nav-item">
-                                    <a href="/users/Register" class="nav-link">Register</a>
-                            </li>
-                    </ul>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarCollapse">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a href="/" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/about-us-loggedout" class="nav-link">Explore Us</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users/login" class="nav-link">Log In</a>
+                </li>
+                <li class="nav-item">
+                    <a href="/users/Register" class="nav-link">Register</a>
+                </li>
+            </ul>
+        </div>
     </nav>
 </section>
 <section id="hero-area" class="py-3">
-   <div class="primary-overlay text-white">
-       <div class="container">
-               <div id="hero-banner" class="row w-100 align-item-center">
-                   <div class="col">
-                           <div class="text-center align-self-center align-center">
-                                   <img src="/images/hero-area-banner-icon.png" alt="" class="hero-png pb-2 img-fluid">
-                           </div>
-                           <div class="text-center align-self-center align-center">
-                                   <h1>Welcome To Exigency Network</h1>
-                                   <p class="lead">Login here below</p>
-                                   <div class="icon-down"><i class="fas fa-chevron-down fa-2x pt-2"></i></div>
-                           </div>
-                   </div> 
-               </div>
-       </div>
-   </div>
+    <div class="primary-overlay text-white">
+        <div class="container">
+            <div id="hero-banner" class="row  align-item-center">
+                <div class="col">
+                    <div class="text-center align-self-center align-center">
+                        <img src="/images/hero-area-banner-icon.png" alt="" class="hero-png pb-2 img-fluid">
+                    </div>
+                    <div class="text-center align-self-center align-center">
+                        <h1>Welcome To Exigency Network</h1>
+                        <p class="lead">Login here below</p>
+                        <div class="icon-down"><i class="fas fa-chevron-down fa-2x pt-2"></i></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 </section>
 <section id="registration" class="py-3 my-5">
-<div class="container text-center py-2">
-    <h3>Login Here</h3>
-    <p class="lead">Fill Out The Details</p>
-    <div class="row align-self-center justify-content-center w-100">
-        <div class="col-lg-3 "></div>
-        <div class="col-lg-6 align-self-center">
-            <% include ./partials/messages %>
-            <form action="/users/login" method="post">
-                <div class="form-group">
-                    <div class="input-group input-group-lg">
-                        <div class="container">
-                            <div class="row w-100 m-0">
-                                <div class="col-2 w-100">
-                                        <span class="input-group-addon"><i class="far fa-id-badge fa-2x pt-2"></i></span>
-                                </div>
-                                <div class="col-10 w-100 px-1">
-                                    <input name="email" type="text" class="form-control rounded" placeholder="Username">
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="form-group">
-                    <div class="input-group input-group-lg">
-                        <div class="container">
-                            <div class="row w-100 m-0">
-                                <div class="col-2 w-100">
-                                        <span class="input-group-addon"><i class="fas fa-lock fa-2x pt-2"></i></span>
-                                </div>
-                                <div class="col-10 w-100 px-1">
-                                    <input name="password" type="password" class="form-control rounded" placeholder="Password">
+    <div class="container text-center py-2">
+        <h3>Login Here</h3>
+        <p class="lead">Fill Out The Details</p>
+        <div class="row align-self-center justify-content-center w-100">
+            <div class="col-lg-3 "></div>
+            <div class="col-lg-6 align-self-center">
+                <% include ./partials/messages %>
+                    <form action="/users/login" method="post">
+                        <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <div class="container">
+                                    <div class="row w-100 m-0">
+                                        <div class="col-2 w-100">
+                                            <span class="input-group-addon"><i class="far fa-id-badge fa-2x pt-2"></i></span>
+                                        </div>
+                                        <div class="col-10 w-100 px-1">
+                                            <input name="email" type="text" class="form-control rounded" placeholder="Username">
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-                <input type="submit" class="btn btn-block btn-rounded bg-warning">
-            </form>
+                        <div class="form-group">
+                            <div class="input-group input-group-lg">
+                                <div class="container">
+                                    <div class="row w-100 m-0">
+                                        <div class="col-2 w-100">
+                                            <span class="input-group-addon"><i class="fas fa-lock fa-2x pt-2"></i></span>
+                                        </div>
+                                        <div class="col-10 w-100 px-1">
+                                            <input name="password" type="password" class="form-control rounded" placeholder="Password">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <input type="submit" class="btn btn-block btn-rounded bg-warning">
+                    </form>
+            </div>
+            <div class="col-lg-3"></div>
         </div>
-        <div class="col-lg-3"></div>
     </div>
-</div>
 </section>
