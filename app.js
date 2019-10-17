@@ -10,8 +10,8 @@ const passport = require('passport');
 var app = express();
 //Secure https
 
-app.enable('trust proxy');
-app.use(secure);
+// app.enable('trust proxy');
+// app.use(secure);
 //passport config
 require('./config/passport')(passport);
 
