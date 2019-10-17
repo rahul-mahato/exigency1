@@ -232,7 +232,8 @@ router.post('/register', async(req, res) => {
                                 ecpn2,
                                 ecfn3,
                                 ecln3,
-                                ecpn3
+                                ecpn3,
+                                authNo
                             });
 
                             //hash pasword
