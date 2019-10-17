@@ -1,24 +1,27 @@
 <section id="Navbar">
-    <nav class="navbar navbar-expand-md bg-dark navbar-dark py-3">
+    <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
         <div class="container">
-            <a href="index.html" class="navbar-brand">Exigency Network</a>
+            <a href="index.html" class="navbar-brand ml-4">Exigency Network</a>
             <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                     <span class="navbar-toggler-icon">
                     </span>
-                </button>
+            </button>
 
             <div class="collapse navbar-collapse" id="navbarCollapse">
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
+                            <a href="/index-loggedin" class="nav-link">Home</a>
+                    </li>
+                    <li class="nav-item">
                         <a href="/dashboard" class="nav-link">Profile</a>
                     </li>
-                    <li class="navbar-item <%= typeof title == 'analysis' ? active: '' %>">
+                    <li class="nav-item <%= typeof title == 'analysis' ? active: '' %>">
                         <a href="/analysis" class="nav-link">Analysis</a>
                     </li>
-                    <li class="navbar-item">
+                    <li class="nav-item">
                         <a href="/users/logout" class="nav-link">Log Out</a>
                     </li>
-                    <li class="navbar-item">
+                    <li class="nav-item">
                         <a href="/dashboard" class="nav-link">Hi <%= Fname %>!</a>
                     </li>
                 </ul>
@@ -32,14 +35,15 @@
             <div id="hero-banner" class="row w-100 align-item-center">
                 <div class="col">
                     <div class="text-center align-self-center align-center">
-                        <img src="/images/hero-area-banner-icon.png" alt="" class="img-fluid">
+                        <img src="/images/hero-area-banner-icon.png" alt="" class="hero-png pb-2 img-fluid">
                     </div>
                     <div class="text-center align-self-center align-center">
                         <h1>Welcome
                             <%= Fname %>
                                 <%= Lname %>
                         </h1>
-                        <p class="lead">A safe insurance to your comforting drives</p>
+                        <p class="lead">Welcome to your profile!</p>
+                        <div class="icon-down"><i class="fas fa-chevron-down fa-2x pt-2"></i></div>
                     </div>
                 </div>
             </div>
@@ -96,6 +100,12 @@
                             <td>Vehicle Number::</td>
                             <td>
                                 <%= vno %>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>IOT Device Number::</td>
+                            <td>
+                                <%= macno %>
                             </td>
                         </tr>
                         <tr>
