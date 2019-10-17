@@ -1,5 +1,5 @@
 const express = require('express');
-
+const secure = require('express-force-https');
 const expressLayouts = require('express-ejs-layouts');
 const mongoose = require('mongoose');
 const bodyParser = require('body-parser');
@@ -10,17 +10,10 @@ const passport = require('passport');
 var app = express();
 //Secure https
 
-
+app.enable('trust proxy');
+app.use(secure);
 //passport config
 require('./config/passport')(passport);
-app.enable('trust proxy');
-app.get("*", function(request, response) {
-    console.log(request.protocol + " " + request.headers.host + " " + request.url);
-
-    console.log("https://" + request.headers.host + request.url);
-    response.redirect("https://" + request.headers.host + request.url);
-
-});
 
 //database
 const db = require('./config/keys').MongoURI;
