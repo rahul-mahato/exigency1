@@ -8,7 +8,7 @@ module.exports = function sendText(hospital, details) {
     mobile1 = details.ph1;
     mobile2 = details.ph2;
     mobile3 = details.ph3;
-    messages = `ALERT. ${hospital.hname} . Our user ${details.name} , Vehicle Number : ${details.vehicle} have been into an accident in https://www.google.com/maps/search/?api=1&query=${details.lat},${details.long}`;
+    messages = `ALERT. Our user ${details.name} , Vehicle Number : ${details.vehicle} have been into an accident in https://www.google.com/maps/search/?api=1&query=${details.lat},${details.long}`;
 
     console.log(`MESSAGE WILL BE SENT TO ${mobile1} , ${mobile2}, ${mobile3}`);
 
@@ -19,7 +19,7 @@ module.exports = function sendText(hospital, details) {
         "port": null,
         "path": "/api/v2/sendsms?country=91",
         "headers": {
-            "authkey": "298671AZzE55kDvJC5da3525c",
+            "authkey": "281712A9MXww3ibFZ5d09c950",
             "content-type": "application/json"
         }
     };
