@@ -181,12 +181,33 @@
 
             function iotReg() {
                 document.querySelector('#MAC').classList.remove('d-none');
+                document.querySelector('.reg-hidden').classList.add('d-none');
+                setTimeout(function(){ 
+                    document.querySelector('.reg-hidden').classList.remove('d-none');
+                }, 300);
+
+                document.querySelector('.lead-reg').classList.add('d-none');
+                setTimeout(function(){ 
+                    document.querySelector('.lead-reg').classList.remove('d-none');
+                }, 300);
+
                 document.getElementById('usertype').value = 'User With IOT Device';
+                document.getElementById('macno').value = '';
 
             }
 
             function genReg() {
                 document.querySelector('#MAC').classList.add('d-none');
+                document.querySelector('.reg-hidden').classList.add('d-none');
+                setTimeout(function(){ 
+                    document.querySelector('.reg-hidden').classList.remove('d-none');
+                }, 300);
+
+                document.querySelector('.lead-reg').classList.add('d-none');
+                setTimeout(function(){ 
+                    document.querySelector('.lead-reg').classList.remove('d-none');
+                }, 300);
+
                 document.getElementById('macno').value = 'NA';
                 document.getElementById('usertype').value = 'User Without IOT Device';
             }
@@ -244,11 +265,11 @@
             });
 
             $('#login').scrollTop(function(){
-                $('#login-content').fadeIn(5000);
+                $('#login-content').fadeIn(3000);
             });
 
             $('#registration').scrollTop(function(){
-                $('#registration-content').fadeIn(5000);
+                $('#registration-content').fadeIn(3000);
             });
             
           </script>
