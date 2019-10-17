@@ -16,10 +16,10 @@ require('./config/passport')(passport);
 app.enable('trust proxy');
 app.get("*", function(request, response) {
     console.log(request.protocol + " " + request.headers.host + " " + request.url);
-    if (request.protocol === 'http') {
-        console.log("https://" + request.headers.host + request.url);
-        response.redirect("https://" + request.headers.host + request.url);
-    }
+
+    console.log("https://" + request.headers.host + request.url);
+    response.redirect("https://" + request.headers.host + request.url);
+
 });
 
 //database
