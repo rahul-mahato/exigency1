@@ -11,7 +11,9 @@ router.get('/about-us-loggedout', (req, res) => {
 });
 //loggedin home
 router.get('/index-loggedin', (req, res) => {
+    console.log(req.user);
     res.render('index-loggedin', {
+        usertype: req.user.usertype,
         Fname: req.user.Fname,
         Lname: req.user.Lname,
         email: req.user.email,
@@ -40,6 +42,7 @@ router.get('/index-loggedin', (req, res) => {
 //analysis page
 router.get('/analysis', (req, res) => {
     res.render('analysis', {
+        usertype: req.user.usertype,
         Fname: req.user.Fname,
         Lname: req.user.Lname,
         email: req.user.email,
@@ -70,6 +73,7 @@ router.get('/analysis', (req, res) => {
 router.get('/dashboard', (req, res) => {
     console.log(req.user);
     res.render('dashboard', {
+        usertype: req.user.usertype,
         Fname: req.user.Fname,
         Lname: req.user.Lname,
         email: req.user.email,

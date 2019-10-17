@@ -34,7 +34,7 @@ router.post('/webAuth', async(req, res, next) => {
     // res.writeHeader(200, { "Content-Type": "text/html" });
     var UserData = await asyncFunctions.checkAuthNo(req.body.authNo);
     if (UserData.length != 1) {
-        res.end("INVALID AUTH NO");
+        res.end('INVALID auth No');
         return;
     } else {
         console.log(UserData);
@@ -98,6 +98,7 @@ router.post('/iotAuth', async(req, res) => {
             ph1: UserData[0].ecpn1,
             ph2: UserData[0].ecpn2,
             ph3: UserData[0].ecpn3,
+
         }
         messages = await findAllDetails(detailsForText);
         for (var i = 0; i < messages.length; i++) {
