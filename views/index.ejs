@@ -1,7 +1,8 @@
-<section id="quickLaunch" class="" style="height: 80vh" onmousemove="getLocation()">
+<section id="quickLaunch" class="" style="height: auto" onmousemove="getLocation()">
     <div class="container py-3">
         <div class="row text-center justify-content-center">
             <div class="col align-self-center">
+                <div class="space py-3"></div>
                 <div class="space py-5">
                     <img src="/images/hero-area-banner-icon.png" alt="" class="hero-png img-fluid pb-2" width="15%" height="15%">
                     <div class="exigency-name display-4 font-weight-medium pb-3" style="color: white">Welcome To Exigency</div>
@@ -19,7 +20,7 @@
                                             <span class="input-group-addon"><i class="fa fa-user fa-2x pt-2"></i></span>
                                         </div>
                                         <div class="col-6 px-1">
-                                            <input name="authNo" type="text" id="authNo" class="form-control rounded" placeholder="Enter Authentication Number">
+                                            <input name="authNo" type="text" id="authNo" class="form-control rounded" placeholder="Enter Authentication Number" onkeypress="getLocation()">
                                         </div>
                                         <div class="col-3"></div>
                                     </div>
@@ -47,12 +48,12 @@
                     </form>
                 </div>
                 <div class="space py-5"></div>
-
+                <div class="space py-3"></div>
             </div>
         </div>
     </div>
 </section>
-<section id="skipLaunch" class="" style="height: 15vh; background-color: rgb(224, 202, 0);">
+<section id="skipLaunch" class="" style="height: auto; background-color: rgb(224, 202, 0);">
     <div class="container pb-3">
         <div class="row text-center justify-content-center">
             <div class="col align-self-center">
@@ -60,7 +61,7 @@
                 <div class="quickbutton">
                     <button href="#" class="exigency-name h1 btn btn-inline btn-rounded" style="color: white; background: black;" onclick="revealQuickLaunch();">Skip To Our Site</button>
                 </div>
-                <div class="space py-5"></div>
+                <div class="space py-1"></div>
             </div>
         </div>
     </div>

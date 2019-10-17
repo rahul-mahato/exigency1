@@ -24,13 +24,15 @@ async function findAuthNo() {
 }
 
 
-
-
 //login page
 router.get('/login', (req, res) => {
     res.render('login');
 })
 
+//riderect 
+router.get('/index', (req, res) => {
+    res.render('index');
+})
 
 //Register page
 router.get('/register', (req, res) => {
@@ -170,88 +172,86 @@ router.post('/register', async(req, res) => {
                         ecln3,
                         ecpn3
                     });
-                } else {
-                    User.findOne({ macno: macno })
-                        .then(user => {
-                            if (user) {
-                                //macno exists
-                                errors.push({ msg: 'MACNO is already registered' });
-                                res.render('register', {
-                                    errors,
-                                    usertype,
-                                    Fname,
-                                    Lname,
-                                    email,
-                                    password,
-                                    password2,
-                                    bloodgroup,
-                                    DOB,
-                                    phoneno,
-                                    vno,
-                                    macno,
-                                    aadhaar,
-                                    city,
-                                    add1,
-                                    add2,
-                                    state,
-                                    ecfn1,
-                                    ecln1,
-                                    ecpn1,
-                                    ecfn2,
-                                    ecln2,
-                                    ecpn2,
-                                    ecfn3,
-                                    ecln3,
-                                    ecpn3
-                                });
-                            } else {
-                                const newUser = new User({
-                                    usertype,
-                                    Fname,
-                                    Lname,
-                                    email,
-                                    password,
-                                    password2,
-                                    bloodgroup,
-                                    DOB,
-                                    phoneno,
-                                    vno,
-                                    macno,
-                                    aadhaar,
-                                    city,
-                                    add1,
-                                    add2,
-                                    state,
-                                    ecfn1,
-                                    ecln1,
-                                    ecpn1,
-                                    ecfn2,
-                                    ecln2,
-                                    ecpn2,
-                                    ecfn3,
-                                    ecln3,
-                                    ecpn3,
-                                    authNo
-                                });
-
-                                //hash pasword
-                                bcrypt.genSalt(10, (err, salt) =>
-                                    bcrypt.hash(newUser.password, salt, (err, hash) => {
-                                        if (err) throw err;
-                                        //set password to hashed 
-                                        newUser.password = hash;
-                                        //save the user
-                                        newUser.save()
-                                            .then(user => {
-                                                req.flash('success_msg', 'You Are Now Registered And Can Log In');
-                                                res.redirect('/users/login');
-                                            })
-                                            .catch(err => console.log(err));
-
-                                    }));
-                            }
-                        });
                 }
+                User.findOne({ macno: macno })
+                    .then(user => {
+                        if (user && usertype != 'User Without IOT Device') {
+                            //macno exists
+                            errors.push({ msg: 'MACNO is already registered' });
+                            res.render('register', {
+                                errors,
+                                usertype,
+                                Fname,
+                                Lname,
+                                email,
+                                password,
+                                password2,
+                                bloodgroup,
+                                DOB,
+                                phoneno,
+                                vno,
+                                macno,
+                                aadhaar,
+                                city,
+                                add1,
+                                add2,
+                                state,
+                                ecfn1,
+                                ecln1,
+                                ecpn1,
+                                ecfn2,
+                                ecln2,
+                                ecpn2,
+                                ecfn3,
+                                ecln3,
+                                ecpn3
+                            });
+                        } else {
+                            const newUser = new User({
+                                usertype,
+                                Fname,
+                                Lname,
+                                email,
+                                password,
+                                password2,
+                                bloodgroup,
+                                DOB,
+                                phoneno,
+                                vno,
+                                macno,
+                                aadhaar,
+                                city,
+                                add1,
+                                add2,
+                                state,
+                                ecfn1,
+                                ecln1,
+                                ecpn1,
+                                ecfn2,
+                                ecln2,
+                                ecpn2,
+                                ecfn3,
+                                ecln3,
+                                ecpn3
+                            });
+
+                            //hash pasword
+                            bcrypt.genSalt(10, (err, salt) =>
+                                bcrypt.hash(newUser.password, salt, (err, hash) => {
+                                    if (err) throw err;
+                                    //set password to hashed 
+                                    newUser.password = hash;
+                                    //save the user
+                                    newUser.save()
+                                        .then(user => {
+                                            req.flash('success_msg', 'You Are Now Registered And Can Log In');
+                                            res.redirect('/users/login');
+                                        })
+                                        .catch(err => console.log(err));
+
+                                }));
+                        }
+                    });
             });
     }
 });
