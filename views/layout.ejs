@@ -145,20 +145,38 @@
       }
 
       function iotReg(){
-        document.querySelector('#registration').classList.remove('d-none');
         document.querySelector('#MAC').classList.remove('d-none');
+        document.getElementById('usertype').value='User With IOT Device';
 
       }
       
       function genReg(){
-        document.querySelector('#registration').classList.remove('d-none');
         document.querySelector('#MAC').classList.add('d-none');
-
+        document.getElementById('macno').value='NA';
+        document.getElementById('usertype').value='User Without IOT Device';
       }
 
+      /*var regSub =0;
+      function regSubClick(){
+        regSub++;
+      }
+      var macno = document.getElementsByName('macno').textContent;
+            if(regSub > 0 && macno == 'NA'){
+              (function(){
+                document.querySelector('#registration').classList.remove('d-none');
+                document.querySelector('#MAC').classList.add('d-none');
+            })();
+            }
+            else if(regSub > 0){
+              (function(){
+                document.querySelector('#registration').classList.remove('d-none');
+                document.querySelector('#MAC').classList.remove('d-none');
+            })();
+          }*/
     </script>
+            
     
-    <script>
+  <script type="text/javascript">
       var x = document.getElementById("latitude");
       var y = document.getElementById("longitude");
       // var d = document.getElementById("demo");

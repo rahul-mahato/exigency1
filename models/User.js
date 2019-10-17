@@ -1,6 +1,10 @@
 const mongoose =require('mongoose');
 
 const UserSchema = new mongoose.Schema({
+    usertype:{
+        type:String,
+        required:true
+    },
     Fname:{
         type:String,
         required:true
@@ -35,7 +39,7 @@ const UserSchema = new mongoose.Schema({
     },
     macno:{
         type:String,
-        default:"00:00:00:00"
+        default:'NA'
     },
     aadhaar:{
         type:String,
