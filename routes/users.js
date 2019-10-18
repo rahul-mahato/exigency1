@@ -16,7 +16,7 @@ async function findAuthNo() {
     return new promise((resolve, reject) => {
         User.find((err, docs) => {
             if (!err) {
-                console.log(docs[docs.length - 1]);
+
                 resolve(docs[docs.length - 1].authNo + 1);
             }
         });
@@ -29,7 +29,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 })
 
-//riderect 
+//redirect 
 router.get('/index', (req, res) => {
     res.render('index');
 })
@@ -41,6 +41,8 @@ router.get('/register', (req, res) => {
 
 //Register Post Request
 router.post('/register', async(req, res) => {
+    console.log(req.body);
+
     const usertype = req.body.usertype;
     const Fname = req.body.Fname;
     const Lname = req.body.Lname;
@@ -51,8 +53,9 @@ router.post('/register', async(req, res) => {
     const DOB = req.body.DOB;
     const phoneno = req.body.phone;
     const vno = req.body.vno;
-    if (req.body.macno !== '')
-        var macno = req.body.macno;
+    //    if (!req.body.macno) {
+    var macno = req.body.macno;
+    // }
     const aadhaar = req.body.aadhaar;
     const city = req.body.city;
     const add1 = req.body.add1;
@@ -68,14 +71,15 @@ router.post('/register', async(req, res) => {
     const ecln3 = req.body.ecln3;
     const ecpn3 = req.body.ecpn3;
     const authNo = await findAuthNo();
-    console.log(authNo);
+    console.log(macno);
+    // return;
 
     let errors = [];
 
     //check req fields
     if (!Fname || !Lname || !email || !password || !password2 ||
         !bloodgroup || !DOB || !phoneno || !vno || !aadhaar || !city ||
-        !add1 || !add2 || !state || !ecfn1 || !ecln1 || !ecpn1 ||
+        !add1 || !state || !ecfn1 || !ecln1 || !ecpn1 ||
         !ecfn2 || !ecln2 || !ecpn2 || !ecfn3 || !ecln3 || !ecpn3 || !usertype) {
         errors.push({ msg: 'Please Fill In All Fields' });
     }
@@ -207,7 +211,7 @@ router.post('/register', async(req, res) => {
                                 ecpn3
                             });
                         } else {
-                            var newUser = new User({
+                            const newUser = new User({
                                 usertype,
                                 Fname,
                                 Lname,
@@ -235,7 +239,8 @@ router.post('/register', async(req, res) => {
                                 ecpn3,
                                 authNo
                             });
-
+                            console.log("new user registrerargf :  " + newUser);
+                            return;
                             //hash pasword
                             bcrypt.genSalt(10, (err, salt) =>
                                 bcrypt.hash(newUser.password, salt, (err, hash) => {

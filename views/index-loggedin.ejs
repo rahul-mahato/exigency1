@@ -11,7 +11,7 @@
                     <button class="btn btn-danger p-3 w-50" onclick="showHelp();"><i class="fas fa-hand-holding-heart"></i>Get Help!</button>
                 </div>
                 <div id="input-quick-help" style="display: none;">
-                    <form action="/location/webAuth" method="post">
+                    <form action="/location/webAuthLoggedin" method="post">
                         <div class="form-group">
                             <div class="input-group input-group-lg">
                                 <div class="container pl-5">
@@ -67,9 +67,9 @@
         </div>
     </div>
 </section>
-<section id="Navbar" class="py-3 d-none">
+<section id="Navbar" class="py-3">
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
-        <a href="index.html" class="navbar-brand ml-4">Exigency Network</a>
+        <a href="/index-loggedin" class="navbar-brand"><img src="/images/exigency-logo.png" class="mx-3" width="40" height="40">Exigency Network</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
                         <span class="navbar-toggler-icon">
                         </span>

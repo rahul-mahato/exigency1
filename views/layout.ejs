@@ -103,6 +103,24 @@
     }
 
     @media only screen and (max-width: 768px) {
+        .icon-explore {
+            width: 35% !important;
+            height: 35% !important;
+        }
+    }
+
+    @media only screen and (max-width: 768px) {
+        #icon-explore-exp {
+            display: none;
+        }
+    }
+
+    .icon-explore{
+        height: 50%;
+        width:50%;
+    }
+
+    @media only screen and (max-width: 768px) {
         #propic{
         height: 20%;
         width:20%;
@@ -143,6 +161,21 @@
     #features {
         background: rgb(222, 213, 28);
         color: #222326;
+    }
+
+    #about {
+        background: rgb(222, 213, 28);
+        color: #222326;
+    }
+
+    #women {
+        background: rgb(222, 213, 28);
+        color: #222326;
+    }
+
+    .add-overlay-yellow{
+        background: rgba(0,0,0,0.8) !important;
+        color: white;
     }
     
     #quickLaunch {
@@ -261,6 +294,11 @@
 
             $('#quickLaunch').ready(function(){
               $('#quickLaunch-banner').fadeIn(1000);
+              
+            });
+
+            $('#life-intro').ready(function(){
+              $('#why-exi').fadeIn(3000);
               
             });
 

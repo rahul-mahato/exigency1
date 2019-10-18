@@ -63,6 +63,40 @@ router.post('/webAuth', async(req, res, next) => {
 
 })
 
+router.post('/webAuthLoggedin', async(req, res, next) => {
+
+    console.log(req.body);
+    if (!req.body.lat || !req.body.long) {
+
+        res.writeHeader(200, { "Content-Type": "text/html" });
+        res.write(JSON.stringify(req.body));
+        res.end("GPS LOCATION ERROR");
+        return;
+    }
+    var UserData = await asyncFunctions.checkAuthNo(req.body.authNo);
+    if (UserData.length != 1) {
+        res.render('invalid-auth-loggedin');
+        return;
+    } else {
+        console.log(UserData);
+
+        detailsForText = {
+            name: `${UserData[0].Fname} ${UserData[0].Lname}`,
+            lat: req.body.lat,
+            long: req.body.long,
+            vehicle: UserData[0].vno,
+            ph1: UserData[0].ecpn1,
+            ph2: UserData[0].ecpn2,
+            ph3: UserData[0].ecpn3,
+        }
+        nearbyDetails = await findAllDetails(detailsForText);
+        console.log(nearbyDetails);
+        res.render('gethelp-loggedin', nearbyDetails);
+        res.end('');
+    }
+
+})
+
 
 
 

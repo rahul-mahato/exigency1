@@ -5,6 +5,10 @@ const ensureAuthenticated = require('../config/auth');
 router.get('/', (req, res) => {
     res.render('index');
 });
+//redirect 
+router.get('/index', (req, res) => {
+    res.render('index');
+})
 //explore-us
 router.get('/about-us-loggedout', (req, res) => {
     res.render('about-us-loggedout');
