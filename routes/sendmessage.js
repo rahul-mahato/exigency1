@@ -28,14 +28,14 @@ module.exports = async function sendText(hospital, details) {
     console.log(messages);
     console.log(`MESSAGE WILL BE SENT TO ${mobile1} , ${mobile2}, ${mobile3}`);
 
-    return;
+
     var options = {
         "method": "POST",
         "hostname": "api.msg91.com",
         "port": null,
         "path": "/api/v2/sendsms?country=91",
         "headers": {
-            "authkey": "281712A9MXww3ibFZ5d09c950",
+            "authkey": "299671AC0Jjc1U5da9eac5",
             "content-type": "application/json"
         }
     };
