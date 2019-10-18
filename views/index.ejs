@@ -20,7 +20,7 @@
                                             <span class="input-group-addon"><i class="fa fa-user fa-2x pt-2"></i></span>
                                         </div>
                                         <div class="col-6 px-1">
-                                            <input name="authNo" type="text" id="authNo" class="form-control rounded" placeholder="Enter Authentication Number" onclick="getLocation()">
+                                            <input name="authNo" type="text" id="authNo" class="form-control rounded" placeholder="Enter Authentication Number" onkeypress="getLocation()">
                                         </div>
                                         <div class="col-3"></div>
                                     </div>
@@ -60,7 +60,7 @@
             <div class="col align-self-center">
                 <div class="space py-3"></div>
                 <div class="quickbutton">
-                    <button href="#" class="exigency-name h1 btn btn-inline btn-rounded" style="color: white; background: black;" onclick="revealQuickLaunch();">Skip To Our Site</button>
+                    <a href="#navbar" class="exigency-name h1 btn btn-inline btn-rounded" style="color: white; background: black;" onclick="revealQuickLaunch();">Skip To Our Site</a>
                 </div>
                 <div class="space py-1"></div>
             </div>
@@ -69,6 +69,8 @@
 </section>
 
 <section id="Navbar" class="py-3 d-none">
+    <a name="navbar"></a>
+
     <nav class="navbar navbar-expand-lg bg-dark navbar-dark py-3">
         <a href="/" class="navbar-brand"><img src="/images/exigency-logo.png" class="mx-3" width="40" height="40">Exigency Network</a>
         <button class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
@@ -124,7 +126,7 @@
                 <p class="lead">Now no more worries with exigency network</p>
             </div>
             <div class="col-lg-3 col-md-4 align-self-center text-lg-left">
-                <img src="/images/women-safe.png" alt="" class="img-fluid w-75 icon-explore"  id="icon-explore-exp">
+                <img src="/images/women-safe.png" alt="" class="img-fluid w-75 icon-explore" id="icon-explore-exp">
             </div>
         </div>
     </div>
