@@ -242,6 +242,7 @@ async function findAllDetails(UserData) {
     nearbyDetails = {
         HosName: Hosname,
         HosPhone_number: Hosphone_number,
+        hospitalPlaceId: `https://www.google.com/maps/embed/v1/directions?origin=${UserData.lat},${UserData.long}&destination=place_id:${place_id1}&key=AIzaSyCZB0Xb0NHCfdEi8DpZGImUTHT80c9UpBk`,
         PoliceName: PoliceName,
         PolPhone_number: Polphone_number,
         SOS1: UserData.ph1,

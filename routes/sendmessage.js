@@ -8,11 +8,11 @@ module.exports = function sendText(hospital, details) {
     mobile1 = details.ph1;
     mobile2 = details.ph2;
     mobile3 = details.ph3;
-    messagesHos = `ALERT. ${hospital.hname} . User ${details.name} , Vehicle Number : ${details.vehicle} have been into an accident at https://www.google.com/maps/search/?api=1&query=${details.lat},${details.long}`;
+    messages = `ALERT. ${hospital.hname} . User ${details.name} , Vehicle Number : ${details.vehicle} have been into an accident at https://www.google.com/maps/search/?api=1&query=${details.lat},${details.long}`;
 
     console.log(`MESSAGE WILL BE SENT TO ${mobile1} , ${mobile2}, ${mobile3}`);
 
-
+    return;
     var options = {
         "method": "POST",
         "hostname": "api.msg91.com",
