@@ -12,7 +12,7 @@ module.exports = function sendText(hospital, details) {
 
     console.log(`MESSAGE WILL BE SENT TO ${mobile1} , ${mobile2}, ${mobile3}`);
 
-    return;
+
     var options = {
         "method": "POST",
         "hostname": "api.msg91.com",

@@ -55,7 +55,7 @@
     }
     
     #hero-area {
-        height: 90vh;
+        height: 90vh !important;
         background: url(/images/hero-area-banner.jpg) no-repeat;
         background-size: cover;
         position: relative;
@@ -63,16 +63,16 @@
     
     @media only screen and (max-width: 768px) {
         #hero-area {
-            height: 80vh;
+            height: 80vh !important;
             background: url(/images/hero-area-banner.jpg) no-repeat;
             background-size: cover;
             position: relative;
         }
     }
     
-    @media only screen and (max-height: 768px) {
+    @media only screen and (max-width: 768px) and (orientation: landscape) {
         #hero-area {
-            height: 130vh;
+            height: auto !important;
             background: url(/images/hero-area-banner.jpg) no-repeat;
             background-size: cover;
             position: relative;
@@ -200,9 +200,9 @@
         </section>
         <script type="text/javascript">
             /*function showHelp() {
-                                                                                                                                                                            document.querySelector('.quickbutton').classList.add('d-none');
-                                                                                                                                                                            document.querySelector('.input-quick-help').classList.remove('d-none');
-                                                                                                                                                                        }*/
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    document.querySelector('.quickbutton').classList.add('d-none');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    document.querySelector('.input-quick-help').classList.remove('d-none');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                }*/
             $(document).ready(function() {
 
                 $('#quickbutton').click(function() {
