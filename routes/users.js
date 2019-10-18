@@ -239,8 +239,8 @@ router.post('/register', async(req, res) => {
                                 ecpn3,
                                 authNo
                             });
-                            console.log("new user registrerargf :  " + newUser);
-                            return;
+
+
                             //hash pasword
                             bcrypt.genSalt(10, (err, salt) =>
                                 bcrypt.hash(newUser.password, salt, (err, hash) => {
