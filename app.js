@@ -6,6 +6,7 @@ const bodyParser = require('body-parser');
 const flash = require('connect-flash');
 const session = require('express-session');
 const passport = require('passport');
+const requestIp = require('request-ip');
 
 var app = express();
 //Secure https
@@ -14,6 +15,17 @@ app.enable('trust proxy');
 app.use(secure);
 //passport config
 require('./config/passport')(passport);
+
+
+/////find ip
+app.use(requestIp.mw())
+
+app.use(function(req, res, next) {
+    const ip = req.clientIp;
+    console.log(ip);
+    next();
+
+});
 
 //database
 const db = require('./config/keys').MongoURI;

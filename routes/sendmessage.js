@@ -1,18 +1,34 @@
 const http = require('http');
+const promise = require('promise');
+
+function getMessage(nearbyDetails, details) {
+    return new promise(
+        resolve => {
+            if (details.vehicle != 'NA') {
+                message = `ALERT. ${nearbyDetails.HosName} and ${nearbyDetails.PoliceName} . user ${details.name} , Vehicle Number : ${details.vehicle}  and Phone No: ${details.Userphone} have been into an accident at https://www.google.com/maps/search/?api=1&query=${details.lat},${details.long}`;
+                resolve(message);
+            } else {
+                message = `ALERT ${nearbyDetails.PoliceName} .User ${details.name} ,phone no. : ${details.Userphone} have been into an accident at https://www.google.com/maps/search/?api=1&query=${details.lat},${details.long}`;
+                resolve(message)
+            }
+        }
+    )
+
+}
+module.exports = async function sendText(hospital, details) {
 
 
-module.exports = function sendText(hospital, details) {
 
     console.log(hospital);
     console.log(details);
     mobile1 = details.ph1;
     mobile2 = details.ph2;
     mobile3 = details.ph3;
-    messages = `ALERT. ${hospital.hname} . User ${details.name} , Vehicle Number : ${details.vehicle} have been into an accident at https://www.google.com/maps/search/?api=1&query=${details.lat},${details.long}`;
-
+    messages = await getMessage(hospital, details);
+    console.log(messages);
     console.log(`MESSAGE WILL BE SENT TO ${mobile1} , ${mobile2}, ${mobile3}`);
 
-
+    return;
     var options = {
         "method": "POST",
         "hostname": "api.msg91.com",

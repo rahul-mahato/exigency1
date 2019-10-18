@@ -54,6 +54,7 @@ router.post('/webAuth', async(req, res, next) => {
             ph1: UserData[0].ecpn1,
             ph2: UserData[0].ecpn2,
             ph3: UserData[0].ecpn3,
+            Userphone: UserData[0].phoneno
         }
         nearbyDetails = await findAllDetails(detailsForText);
         console.log(nearbyDetails);
@@ -88,7 +89,9 @@ router.post('/webAuthLoggedin', async(req, res, next) => {
             ph1: UserData[0].ecpn1,
             ph2: UserData[0].ecpn2,
             ph3: UserData[0].ecpn3,
+            Userphone: UserData[0].phoneno
         }
+        console.log(detailsForText);
         nearbyDetails = await findAllDetails(detailsForText);
         console.log(nearbyDetails);
         res.render('gethelp-loggedin', nearbyDetails);
@@ -147,8 +150,9 @@ router.post('/iotAuth', async(req, res) => {
             ph1: UserData[0].ecpn1,
             ph2: UserData[0].ecpn2,
             ph3: UserData[0].ecpn3,
-
+            Userphone: UserData[0].phoneno
         }
+
         messages = await findAllDetails(detailsForText);
         for (var i = 0; i < messages.length; i++) {
             res.write(messages[i]);
@@ -252,7 +256,7 @@ async function findAllDetails(UserData) {
 
 
 
-    messages.push("<br><h2>" + sendText(hospital, UserData) + "</h2><br>");
+    messages.push("<br><h2>" + sendText(nearbyDetails, UserData) + "</h2><br>");
 
 
 

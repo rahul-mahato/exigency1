@@ -200,9 +200,9 @@
         </section>
         <script type="text/javascript">
             /*function showHelp() {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                document.querySelector('.quickbutton').classList.add('d-none');
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                document.querySelector('.input-quick-help').classList.remove('d-none');
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            }*/
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            document.querySelector('.quickbutton').classList.add('d-none');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            document.querySelector('.input-quick-help').classList.remove('d-none');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }*/
             $(document).ready(function() {
 
                 $('#quickbutton').click(function() {
@@ -223,23 +223,27 @@
 
             function iotReg() {
                 document.querySelector('#MAC').classList.remove('d-none');
+                document.querySelector('#VNO').classList.remove('d-none');
                 document.querySelector('.reg-hidden').classList.add('d-none');
                 setTimeout(function() {
                     document.querySelector('.reg-hidden').classList.remove('d-none');
                 }, 300);
 
                 document.querySelector('.lead-reg').classList.add('d-none');
+
                 setTimeout(function() {
                     document.querySelector('.lead-reg').classList.remove('d-none');
                 }, 300);
 
                 document.getElementById('usertype').value = 'User With IOT Device';
                 document.getElementById('macno').value = '';
+                document.getElementById('vno').value = '';
 
             }
 
             function genReg() {
                 document.querySelector('#MAC').classList.add('d-none');
+                document.querySelector('#VNO').classList.add('d-none');
                 document.querySelector('.reg-hidden').classList.add('d-none');
                 setTimeout(function() {
                     document.querySelector('.reg-hidden').classList.remove('d-none');
@@ -251,7 +255,10 @@
                 }, 300);
 
                 document.getElementById('macno').value = 'NA';
+                document.getElementById('vno').value = 'NA';
+
                 document.getElementById('usertype').value = 'User Without IOT Device';
+
             }
 
             /*var regSub =0;
