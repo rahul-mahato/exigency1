@@ -1,7 +1,7 @@
 const http = require('http');
 const promise = require('promise');
 
-function getMessage(nearbyDetails, details) {
+async function getMessage(nearbyDetails, details) {
     return new promise(
         resolve => {
             if (details.vehicle != 'NA') {
@@ -26,6 +26,9 @@ module.exports = async function sendText(hospital, details) {
     mobile3 = details.ph3;
     messages = await getMessage(hospital, details);
     console.log(messages);
+    console.log();
+    console.log();
+    console.log();
     console.log(`MESSAGE WILL BE SENT TO ${mobile1} , ${mobile2}, ${mobile3}`);
 
 
