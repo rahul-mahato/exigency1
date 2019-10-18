@@ -18,14 +18,14 @@ require('./config/passport')(passport);
 
 
 /////find ip
-app.use(requestIp.mw())
+// app.use(requestIp.mw())
 
-app.use(function(req, res, next) {
-    const ip = req.clientIp;
-    console.log(ip);
-    next();
+// app.use(function(req, res, next) {
+//     const ip = req.clientIp;
+//     console.log(ip);
+//     next();
 
-});
+// });
 
 //database
 const db = require('./config/keys').MongoURI;

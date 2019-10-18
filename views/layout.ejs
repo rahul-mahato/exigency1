@@ -200,9 +200,9 @@
         </section>
         <script type="text/javascript">
             /*function showHelp() {
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            document.querySelector('.quickbutton').classList.add('d-none');
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                            document.querySelector('.input-quick-help').classList.remove('d-none');
-                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        }*/
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        document.querySelector('.quickbutton').classList.add('d-none');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        document.querySelector('.input-quick-help').classList.remove('d-none');
+                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                    }*/
             $(document).ready(function() {
 
                 $('#quickbutton').click(function() {
@@ -289,6 +289,7 @@
 
             function getLocation() {
                 if (navigator.geolocation) {
+
                     navigator.geolocation.getCurrentPosition(showPosition);
                 } else {
                     x.value = "Geolocation is not supported by this browser.";
@@ -298,6 +299,7 @@
             function showPosition(position) {
                 // d.innerHTML = "Latitude: " + position.coords.latitude +
                 //     "<br>Longitude: " + position.coords.longitude;
+                document.getElementById('ip').textContent = `Hi, we are tracking your ip . Remember fake registration of emergency services is a punishable offence. Please authenticate when it is really required. Thank you!`
                 x.value = position.coords.latitude;
                 y.value = position.coords.longitude;
             }
