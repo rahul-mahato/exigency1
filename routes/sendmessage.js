@@ -38,10 +38,12 @@ module.exports = async function sendText(hospital, details) {
         "port": null,
         "path": "/api/v2/sendsms?country=91",
         "headers": {
-            "authkey": "299671AC0Jjc1U5da9eac5",
+            "authkey": "299689AtFZi6wZt0s5daa062a",
             "content-type": "application/json"
         }
     };
+
+
 
     var req = http.request(options, function(res) {
         var chunks = [];
