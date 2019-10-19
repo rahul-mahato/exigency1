@@ -38,7 +38,7 @@ module.exports = async function sendText(hospital, details) {
         "port": null,
         "path": "/api/v2/sendsms?country=91",
         "headers": {
-            "authkey": "299734ALe4NMkFj4R5daa9d40",
+            "authkey": "299740AYTDOfYY5daaa1e4",
             "content-type": "application/json"
         }
     };
